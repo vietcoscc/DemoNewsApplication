@@ -1,4 +1,4 @@
-package com.example.viet.demonewsapplication;
+package com.example.viet.demonewsapplication.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

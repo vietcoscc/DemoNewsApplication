@@ -1,4 +1,4 @@
-package com.example.viet.demonewsapplication;
+package com.example.viet.demonewsapplication.adapter;
 
 
 import android.content.Context;
@@ -10,8 +10,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.viet.demonewsapplication.R;
+import com.example.viet.demonewsapplication.model.NewsItem;
 
 import java.util.ArrayList;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * Created by vaio on 1/26/2017.
@@ -84,23 +89,24 @@ public class NewsHomeAdapter extends RecyclerView.Adapter<NewsHomeAdapter.ViewHo
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        @BindView(R.id.ivWrapper)
         ImageView ivWrapper;
+        @BindView(R.id.tvName)
         TextView tvName;
+        @BindView(R.id.tvContentPreview)
         TextView tvContentPreview;
+        @BindView(R.id.tvTopicName)
         TextView tvTopicName;
+        @BindView(R.id.tvAuthor)
         TextView tvAuthor;
+        @BindView(R.id.tvTimeStamp)
         TextView tvTimeStamp;
+        @BindView(R.id.watchLater)
         ImageView ivWatchLater;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            ivWrapper = (ImageView) itemView.findViewById(R.id.ivWrapper);
-            tvName = (TextView) itemView.findViewById(R.id.tvName);
-            tvContentPreview = (TextView) itemView.findViewById(R.id.tvContentPreview);
-            tvTopicName = (TextView) itemView.findViewById(R.id.tvTopicName);
-            tvAuthor = (TextView) itemView.findViewById(R.id.tvAuthor);
-            tvTimeStamp = (TextView) itemView.findViewById(R.id.tvTimeStamp);
-            ivWatchLater = (ImageView) itemView.findViewById(R.id.watchLater);
+            ButterKnife.bind(this, itemView);
             itemView.setOnClickListener(this);
         }
 
